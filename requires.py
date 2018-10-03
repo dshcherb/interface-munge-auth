@@ -12,7 +12,7 @@ class MungeAuthRequires(reactive.Endpoint):
     @reactive.when('endpoint.{endpoint_name}.changed.munge_key')
     def check_key(self):
         rel = self._munge_auth_relation()
-        joined_units = rel.joined_units()
+        joined_units = rel.joined_units
         hookenv.log('Joined munge provider units: {}'.format(joined_units))
         remote_unit = hookenv.remote_unit()
         hookenv.log('Remote unit: {}'.format(remote_unit))
